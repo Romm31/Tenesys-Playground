@@ -1,7 +1,7 @@
 # Tenesys Playground
 
 Tenesys Playground is a web-based Capture The Flag (CTF) platform built with PHP.  
-This project is originally based on https://github.com/haxzie-xx/anton-ctf-php, but the design and interface have been upgraded and improved for a better user experience.
+This project is originally based on [anton-ctf-php](https://github.com/haxzie-xx/anton-ctf-php), but the design and interface have been upgraded and improved for a better user experience.
 
 ## Features
 
@@ -37,5 +37,5 @@ Compared to the original repository, this version includes:
 
 ## Credits
 
-- Based on anton-ctf-php by haxzie-xx (https://github.com/haxzie-xx/anton-ctf-php)
-- Modified and improved by Romm31 (https://github.com/Romm31)
+- Based on anton-ctf-php by haxzie-xx [anton-ctf-php](https://github.com/haxzie-xx/anton-ctf-php)
+- Modified and improved by [Rommel](https://github.com/Romm31)
