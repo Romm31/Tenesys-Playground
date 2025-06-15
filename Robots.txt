@@ -1,0 +1,8 @@
+# TenesysCTF robots.txt
+# Disallow crawlers from accessing this path
+User-agent: *
+Disallow: /admin
+Disallow: /super-secret
+Disallow: /n0b0dy-l00ks-h3re
+
+# FLAG: Tenesys{F1nd1ng-Th3-Unc4ch3d-R0b0t-Tr41l}
