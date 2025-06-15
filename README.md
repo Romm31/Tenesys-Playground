@@ -20,10 +20,8 @@ Compared to the original repository, this version includes:
 - New color scheme and layouts
 
 ## Screenshots
-(images/Screenshot1.png)
-
-
-(images/Screenshot1.png)
+![Get Started](images/Screenshot1.png)
+![Get Started](images/Screenshot2.png)
 
 ## How to Run
 
