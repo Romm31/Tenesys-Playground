@@ -8,10 +8,13 @@
 <html>
 
 <?php include 'includes/header.php' ?>
+<<<<<<< HEAD
 
 
 <link rel="stylesheet" href="css/sidebar-toggle.css">
 
+=======
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 <?php 
     $CHALLENGES = "challenges";
     $LEADERBOARD = "leaderboard";
@@ -30,9 +33,18 @@
         die();
     }
 ?>
+<<<<<<< HEAD
 <body>
 <?php 
 
+=======
+
+<body>
+
+<?php 
+
+    // 1. Ambil skor dan jumlah solve untuk user yang sedang login
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
     $sql_user_stats = "SELECT COUNT(sb.c_id) as solved, IFNULL(SUM(ch.score), 0) as score 
                        FROM users u 
                        LEFT JOIN scoreboard sb ON u.id = sb.user_id 
@@ -49,6 +61,10 @@
         $user_solve = $row_user['solved'];
     }
 
+<<<<<<< HEAD
+=======
+    // 2. Hitung Peringkat (Ranking) Pengguna
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
     $user_rank = "-"; // Default rank
     $sql_leaderboard = "SELECT u.id, IFNULL(SUM(ch.score), 0) AS total_score 
                         FROM users u 
@@ -70,6 +86,10 @@
         }
     }
 
+<<<<<<< HEAD
+=======
+    // 3. Hitung jumlah total user dan challenge
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
     $users_count = 0;
     $challenges_count = 0;
 
@@ -89,9 +109,15 @@
 ?>
 <div class="dash-container">
     <div class="dash-side-nav">
+<<<<<<< HEAD
         <img src="images/head.png" alt="Logo" style="width: 120px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto;">
         <h2>Tenesys Playground</h2>
         <!-- FLAG: Tenesys{S3arch1ng-For-Th3-L0st-K3y5} -->
+=======
+        <h2>Tenesys Playground</h2>
+        <body>
+<!-- FLAG: Tenesys{S3arch1ng-For-Th3-L0st-K3y5} -->
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
         <p class="nav-username"><?php echo htmlspecialchars($login_username); ?></p>
         <div class="score">
             <h1 class="score"><?php echo $user_score; ?></h1>
@@ -113,7 +139,10 @@
     </div>
     <div class="dash-content">
         <div class="dash-nav">
+<<<<<<< HEAD
             <button id="toggleSidebar">☰</button>
+=======
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
             <div class="tabs">
                 <ul>
                     <?php 
@@ -152,13 +181,21 @@
 <div class="toast" id="toast">
     <h3 id="message">Error</h3>
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 <script>
 let myToast = new Toast();
 myToast.init(document.getElementById("toast")); 
 </script>
 
+<<<<<<< HEAD
 <script src="js/sidebar-toggle.js"></script>
 
 </body>
 </html>
+=======
+</body>
+</html>
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c

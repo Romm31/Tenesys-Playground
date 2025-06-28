@@ -39,43 +39,73 @@ if (isset($_GET["p"]) && $_GET["p"] == $LEADERBOARD) {
             <ul>
                 <?php 
                     if($current_page == $DASHBOARD){
+<<<<<<< HEAD
                         echo "<li><a href='?p=dashboard' class='active'>Dashboard</a></li>
                         <li><a href='?p=leaderboard' >Leaderboard</a></li>
+=======
+                        echo "<li><a href='?p=dashboard' class='active'>DashBoard</a></li>
+                        <li><a href='?p=leaderboard' >LeaderBoard</a></li>
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                         <li><a href='?p=challenges' >Challenges</a></li>
                         <li><a href='?p=categories'>Categories</a></li>
 						<li><a href='?p=visitors'>Visitors</a></li>
                         <li><a href='?p=settings'>Settings</a></li>";
                     } else if ($current_page == $LEADERBOARD) {
+<<<<<<< HEAD
                         echo "<li><a href='?p=dashboard' >Dashboard</a></li>
                             <li><a href='?p=leaderboard' class='active'>Leaderboard</a></li>
+=======
+                        echo "<li><a href='?p=dashboard' >DashBoard</a></li>
+                            <li><a href='?p=leaderboard' class='active'>LeaderBoard</a></li>
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                             <li><a href='?p=challenges' >Challenges</a></li>
                             <li><a href='?p=categories'>Categories</a></li>
 							<li><a href='?p=visitors'>Visitors</a></li>
                             <li><a href='?p=settings'>Settings</a></li>";
                     }else if ($current_page == $CHALLENGES) {
+<<<<<<< HEAD
                         echo "<li><a href='?p=dashboard' >Dashboard</a></li>
                         <li><a href='?p=leaderboard' >Leaderboard</a></li>
+=======
+                        echo "<li><a href='?p=dashboard' >DashBoard</a></li>
+                        <li><a href='?p=leaderboard' >LeaderBoard</a></li>
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                         <li><a href='?p=challenges' class='active'>Challenges</a></li>
                         <li><a href='?p=categories'>Categories</a></li>
 						<li><a href='?p=visitors'>Visitors</a></li>
                         <li><a href='?p=settings'>Settings</a></li>";
                     }else if ($current_page == $CATEGORIES) {
+<<<<<<< HEAD
                         echo "<li><a href='?p=dashboard' >Dashboard</a></li>
                             <li><a href='?p=leaderboard' >Leaderboard</a></li>
+=======
+                        echo "<li><a href='?p=dashboard' >DashBoard</a></li>
+                            <li><a href='?p=leaderboard' >LeaderBoard</a></li>
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                             <li><a href='?p=challenges' >Challenges</a></li>
                             <li><a href='?p=categories' class='active'>Categories</a></li>
 							<li><a href='?p=visitors'>Visitors</a></li>
                             <li><a href='?p=settings'>Settings</a></li>";
                     }else if ($current_page == $VISITORS) {
+<<<<<<< HEAD
                         echo "<li><a href='?p=dashboard' >Dashboard</a></li>
                         <li><a href='?p=leaderboard' >Leaderboard</a></li>
+=======
+                        echo "<li><a href='?p=dashboard' >DashBoard</a></li>
+                        <li><a href='?p=leaderboard' >LeaderBoard</a></li>
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                         <li><a href='?p=challenges' >Challenges</a></li>
                         <li><a href='?p=categories'>Categories</a></li>
 						<li><a href='?p=visitors' class='active'>Visitors</a></li>
                         <li><a href='?p=settings'>Settings</a></li>";
                     }else if ($current_page == $SETTINGS) {
+<<<<<<< HEAD
                         echo "<li><a href='?p=dashboard' >Dashboard</a></li>
                         <li><a href='?p=leaderboard' >Leaderboard</a></li>
+=======
+                        echo "<li><a href='?p=dashboard' >DashBoard</a></li>
+                        <li><a href='?p=leaderboard' >LeaderBoard</a></li>
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                         <li><a href='?p=challenges' >Challenges</a></li>
                         <li><a href='?p=categories'>Categories</a></li>
 						<li><a href='?p=visitors'>Visitors</a></li>

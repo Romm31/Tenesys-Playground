@@ -73,7 +73,11 @@
                 text-align: center;
 
                 &:before {
+<<<<<<< HEAD
                     content: url('/images/coin.png');
+=======
+                    content: url('/anton/images/coin.png');
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                     margin: 5px 5px 0 0;
                 }
             }
@@ -89,7 +93,11 @@
                 text-align: center;
 
                 &:before {
+<<<<<<< HEAD
                     content: url('/images/checked.png');
+=======
+                    content: url('/anton/images/checked.png');
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                     margin: 5px 5px 0 0;
                 }
             }

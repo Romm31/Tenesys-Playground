@@ -100,7 +100,11 @@ nav h1 {
   text-align: center;
   font-size: 2.2em;
   font-family: 'Ubuntu';
+<<<<<<< HEAD
   color: #09f;
+=======
+  color: #b0b8d0;
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 }
 
 .main-container .headings .white-btn {
@@ -158,6 +162,18 @@ nav h1 {
   padding: 20px 10px 20px 10px;
 }
 
+<<<<<<< HEAD
+=======
+.login-card .tabs ul li a:active {
+  color: #09f;
+}
+
+.login-card .tabs ul li .active {
+  border-bottom: 2px solid #09f;
+  color: #09f;
+}
+
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 .login-card form {
   display: flex;
   flex-direction: column;
@@ -276,7 +292,12 @@ nav h1 {
   margin: 0px 0px 10px 0px;
   color: #b0b8d0;
   text-align: center;
+<<<<<<< HEAD
   font-size: 1.2em;
+=======
+  font-size: 1em;
+  border-bottom: 1px solid #334;
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 }
 
 .challenge-category .card-container .card .points {
@@ -291,12 +312,20 @@ nav h1 {
 }
 
 .challenge-category .card-container .card .points:before {
+<<<<<<< HEAD
   content: url("/images/coin.png");
+=======
+  content: url("/anton/images/coin.png");
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
   margin: 5px 5px 0 0;
 }
 
 .challenge-category .card-container .card .solved {
+<<<<<<< HEAD
   color: #099e10;
+=======
+  color: #09f;
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -307,7 +336,11 @@ nav h1 {
 }
 
 .challenge-category .card-container .card .solved:before {
+<<<<<<< HEAD
   content: url("/images/checked.png");
+=======
+  content: url("/anton/images/checked.png");
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
   margin: 5px 5px 0 0;
 }
 
@@ -421,7 +454,11 @@ nav h1 {
   text-align: center;
   padding: 10px 10px 10px 10px;
   margin: 0 0 0 0;
+<<<<<<< HEAD
   background-color: #121c3d;
+=======
+  background-color: #29304a;
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 }
 
 .dash-side-nav .score {
@@ -455,7 +492,11 @@ nav h1 {
   padding: 10px;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   background: #121c3d;
+=======
+  background: #29304a;
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 }
 
 .dash-side-nav .status .col:nth-child(1) {
@@ -477,7 +518,10 @@ nav h1 {
   margin: 0px 10px 10px 10px;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 .dash-side-nav .links {
   margin-top: 10px;
 }
@@ -547,6 +591,13 @@ nav h1 {
   color: #09f;
 }
 
+<<<<<<< HEAD
+=======
+.dash-content .dash-nav .tabs ul li .active {
+  color: #09f;
+  border-bottom: 2px solid #09f;
+}
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 
 .dash-content .dash-nav .logout {
   display: inline-block;
@@ -1238,7 +1289,11 @@ nav h1 {
   --text-muted: #64748b;
   --shadow-main: 0 8px 32px -12px #030712bb;
   --border-subtle: #1e293b;
+<<<<<<< HEAD
   --text-white: #ffffff;
+=======
+  --text-white: #ffffff;  
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
   --outline: 2px solid var(--accent2);
 }
 
@@ -1438,6 +1493,12 @@ body {
   left: 100%;
 }
 
+<<<<<<< HEAD
+=======
+.white-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 
 /* ===== LOGIN CARD (pendek & lebar) ===== */
 .login-card {
@@ -1546,12 +1607,19 @@ body {
 
 .tabs ul li a.active,
 .tabs ul li a:hover {
+<<<<<<< HEAD
   background: none;
   color: #09f !important;
   border-bottom: 3px solid;
   border-image: linear-gradient(45deg, var(--accent), var(--accent2)) 1;
   transform: translateY(0);
   box-shadow: none;
+=======
+  background: linear-gradient(45deg, var(--accent), var(--accent2));
+  color: var(--text-white);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 }
 
 /* ===== FORM STYLES ===== */
@@ -2154,7 +2222,10 @@ input[type="submit"]:hover {
     opacity: 0;
     transform: translateY(36px) scale(0.98);
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -2162,12 +2233,18 @@ input[type="submit"]:hover {
 }
 
 /* ===== CHILDREN ANIMATION (STAGGERED) ===== */
+<<<<<<< HEAD
 .settings>h3,
 .settings>form {
+=======
+.settings > h3,
+.settings > form {
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
   opacity: 0;
   transform: translateY(28px);
   animation: fadeInUpSettingsChild 0.7s cubic-bezier(.23, 1, .32, 1) forwards;
 }
+<<<<<<< HEAD
 
 .settings>h3 {
   animation-delay: 0.15s;
@@ -2180,6 +2257,11 @@ input[type="submit"]:hover {
 .settings>form:nth-of-type(2) {
   animation-delay: 0.55s;
 }
+=======
+.settings > h3 { animation-delay: 0.15s; }
+.settings > form:nth-of-type(1) { animation-delay: 0.35s; }
+.settings > form:nth-of-type(2) { animation-delay: 0.55s; }
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 
 @keyframes fadeInUpSettingsChild {
   to {
@@ -2193,7 +2275,10 @@ input[type="submit"]:hover {
 .settings input[type="password"] {
   transition: border-color 0.3s, box-shadow 0.3s, background 0.3s, transform 0.2s;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 .settings input[type="text"]:focus,
 .settings input[type="password"]:focus {
   border-color: var(--accent2, #3b82f6);
@@ -2208,12 +2293,16 @@ input[type="submit"]:hover {
   position: relative;
   overflow: hidden;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 .settings input[type="submit"]:hover {
   background: linear-gradient(90deg, var(--accent3, #60a5fa), var(--accent2, #3b82f6));
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 8px 24px -6px var(--accent3, #60a5fa)55;
 }
+<<<<<<< HEAD
 
 .settings input[type="submit"]::before {
   content: '';
@@ -2223,11 +2312,22 @@ input[type="submit"]:hover {
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.13), transparent);
+=======
+.settings input[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.13), transparent);
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
   transition: left 0.5s;
   z-index: 1;
   pointer-events: none;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 .settings input[type="submit"]:hover::before {
   left: 100%;
 }
@@ -2238,4 +2338,8 @@ input[type="submit"]:hover {
     padding: 20px 4vw !important;
     max-width: 98vw !important;
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c

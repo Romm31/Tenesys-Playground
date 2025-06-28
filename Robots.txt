@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 # For crawlers: This file contains paths that must not be indexed.
 # You know what you're doing if you're scrolling this far.
 
+=======
+# TenesysCTF robots.txt
+# Disallow crawlers from accessing this path
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 User-agent: *
 Disallow: /admin
 Disallow: /super-secret
 Disallow: /n0b0dy-l00ks-h3re
+<<<<<<< HEAD
 Disallow: /tmp
 Disallow: /backup
 Disallow: /logs
@@ -558,3 +564,7 @@ Disallow: /not/the/real/flag
 Disallow: /fakeflag01
 
 
+=======
+
+# FLAG: Tenesys{F1nd1ng-Th3-Unc4ch3d-R0b0t-Tr41l}
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c

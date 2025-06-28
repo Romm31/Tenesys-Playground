@@ -1,4 +1,5 @@
 <form action="login.php" method="POST">
+<<<<<<< HEAD
     <input type="text" name="email" placeholder="Email Address" required />
     <input type="password" name="password" placeholder="Password" required />
 
@@ -13,4 +14,9 @@
     </div>
 
     <input type="submit" name="login-submit" value="Sign In" style="margin-top: 12px;">
+=======
+    <input type="text" name="email" placeholder="Email Address"/>
+    <input type="password" name="password" placeholder="Password"/>
+    <input type="submit" name="login-submit" value="Sign In">
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 </form>

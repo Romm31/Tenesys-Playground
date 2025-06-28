@@ -39,7 +39,11 @@
             <h1><?php echo $admin_challenge_count ?></h1>
         </div>
         <div class="col">
+<<<<<<< HEAD
             <h3>Categories</h3>
+=======
+            <h3>categories</h3>
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
             <h1><?php echo $admin_cat_count ?></h1>
         </div>
     </div>

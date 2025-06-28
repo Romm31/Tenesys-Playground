@@ -1,5 +1,6 @@
 <?php
 session_start();
+<<<<<<< HEAD
 include("config.php"); // Tambahkan agar koneksi DB bisa digunakan
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -16,6 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         setcookie('remember_token', '', time() - 3600, "/");
 
         // Hapus semua sesi login
+=======
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['logout-yes'])) {
+>>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
         session_destroy();
         header("Location: login.php");
         exit();
