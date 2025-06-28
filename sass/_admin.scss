@@ -1,0 +1,73 @@
+@import 'admin/challenges';
+@import 'admin/dashboard';
+
+// Warna dasar biru dongker
+$primary-bg: #0a192f;
+$secondary-bg: #112240;
+$primary-text: #ccd6f6;
+$secondary-text: #8892b0;
+$accent: #64ffda;
+
+.admin-nav {
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    background-color: $primary-bg;
+    -webkit-box-shadow: 0px 0px 30px -6px rgba(10, 25, 47, 0.75);
+    -moz-box-shadow: 0px 0px 30px -6px rgba(10, 25, 47, 0.75);
+    box-shadow: 0px 0px 30px -6px rgba(10, 25, 47, 0.75);
+
+    .nav {
+        display: flex;
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: flex;
+                padding: 0;
+                margin: 0;
+                
+                a {
+                    color: $primary-text;
+                    font-size: 1.1em;
+                    text-decoration: none;
+                    padding: 25px 25px 25px 25px;
+                    background-color: transparent;
+                    transition: background 0.2s, color 0.2s;
+
+                    &:hover,
+                    &:active {
+                        background-color: $secondary-bg;
+                        color: $accent;
+                    }
+                }
+
+                .active {
+                    color: $accent;
+                    border-bottom: 2px solid $accent;
+                }
+            }
+        }
+
+        .logout {
+            color: $secondary-text;
+            font-size: 1.1em;
+            text-decoration: none;
+            padding: 25px 25px 25px 25px;
+            background-color: transparent;
+
+            &:hover,
+            &:active {
+                background-color: $secondary-bg;
+                color: $accent;
+            }
+        }
+    }
+}

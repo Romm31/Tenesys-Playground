@@ -1,0 +1,92 @@
+# ==========================
+# Aktifkan Rewrite Engine
+# ==========================
+RewriteEngine On
+RewriteBase /
+
+# ==========================
+# ROUTING DASHBOARD
+# ==========================
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^dashboard/([^/]+)/?$ dashboard.php?p=$1 [L,QSA]
+RewriteRule ^dashboard/?$ dashboard.php [L,QSA]
+
+# ==========================
+# BLOKIR FOLDER SENSITIF
+# ==========================
+RewriteRule ^(bugbounty|admin|logs|private|backup|secret|config|core)/?$ /error.php [L,R=403]
+
+# ==========================
+# BLOKIR FILE SENSITIF LANGSUNG (backup, db, config)
+# ==========================
+<FilesMatch "\.(env|git|htaccess|htpasswd|ini|phps|fla|psd|log|sh|bak|sql|yml|yaml|pem|key)$">
+    Require all denied
+</FilesMatch>
+
+# ==========================
+# BLOKIR .htaccess
+# ==========================
+<Files .htaccess>
+    Require all denied
+</Files>
+
+# ==========================
+# PENANGANAN SEMUA URL YANG TIDAK DITEMUKAN
+# ==========================
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /error.php [L]
+
+# ==========================
+# CUSTOM ERROR HANDLING
+# ==========================
+ErrorDocument 400 /error.php
+ErrorDocument 401 /error.php
+ErrorDocument 403 /error.php
+ErrorDocument 404 /error.php
+ErrorDocument 405 /error.php
+ErrorDocument 408 /error.php
+ErrorDocument 500 /error.php
+ErrorDocument 502 /error.php
+ErrorDocument 503 /error.php
+ErrorDocument 504 /error.php
+
+# ==========================
+# MENCEGAH DIRECTORY LISTING
+# ==========================
+Options -Indexes
+IndexIgnore *
+
+# ==========================
+# BATASAN FILE UPLOAD
+# ==========================
+php_value upload_max_filesize 10M
+php_value post_max_size 12M
+
+# ==========================
+# SECURITY HEADERS
+# ==========================
+# Cegah klikjacking
+Header always set X-Frame-Options "SAMEORIGIN"
+
+# MIME sniffing protection
+Header set X-Content-Type-Options "nosniff"
+
+# XSS proteksi dasar
+Header set X-XSS-Protection "1; mode=block"
+
+# Content Security Policy dasar
+Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
+
+# Strict Transport Security (aktifkan jika HTTPS sudah berjalan)
+# Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+# Referrer Policy (minimalkan kebocoran info dari referer)
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Permissions Policy (batasi fitur browser)
+Header set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+
+# Remove Server Signature
+ServerSignature Off

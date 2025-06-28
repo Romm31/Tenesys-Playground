@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tenesys Playground</title>
+	<link rel="icon" type="image/png" href="images/head.png">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/style1.css">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #0a1626;
+			font-family: 'Courier New', Courier, monospace;
+			color: #e0e6ed;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			text-align: center;
+			overflow: hidden;
+		}
+
+		.container {
+			background-color: #16213a;
+			padding: 40px 30px;
+			border-radius: 15px;
+			box-shadow: 0 8px 25px rgba(10, 22, 38, 0.7);
+			max-width: 700px;
+			position: relative;
+			z-index: 2;
+			animation: popIn 1s cubic-bezier(.77, 0, .18, 1.01);
+		}
+
+		@keyframes popIn {
+			0% {
+				transform: scale(0.8) translateY(80px);
+				opacity: 0;
+			}
+
+			100% {
+				transform: scale(1) translateY(0);
+				opacity: 1;
+			}
+		}
+
+		h1 {
+			margin-bottom: 10px;
+			color: #3fa7ff;
+			font-size: 2.2em;
+			letter-spacing: 2px;
+			animation: neonGlow 2s infinite alternate;
+			text-shadow: 0 0 8px #3fa7ff, 0 0 20px #1e3c72;
+		}
+
+		@keyframes neonGlow {
+			from {
+				text-shadow: 0 0 8px #3fa7ff, 0 0 20px #1e3c72;
+			}
+
+			to {
+				text-shadow: 0 0 20px #3fa7ff, 0 0 40px #1e3c72;
+			}
+		}
+
+		p {
+			font-size: 1em;
+			color: #b3c7e6;
+			line-height: 1.6;
+			animation: fadeInUp 1.2s 0.5s both;
+		}
+
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(30px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.difficulty-label {
+			font-weight: bold;
+			padding: 2px 6px;
+			border-radius: 4px;
+		}
+
+		.easy {
+			color: #6fffb0;
+			background-color: #133d2e;
+		}
+
+		.medium {
+			color: #ffdd57;
+			background-color: #473f1e;
+		}
+
+		.hard {
+			color: #ff6b6b;
+			background-color: #3b1c1c;
+		}
+
+		.nav {
+			margin-top: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			animation: fadeInUp 1.4s 0.7s both;
+		}
+
+		.nav a {
+			margin: 0;
+			color: #fff;
+			background: linear-gradient(90deg, #3fa7ff 0%, #1e3c72 100%);
+			padding: 10px 22px;
+			border-radius: 5px;
+			text-decoration: none;
+			font-size: 1em;
+			font-weight: bold;
+			box-shadow: 0 2px 8px rgba(63, 167, 255, 0.15);
+			transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
+			position: relative;
+			overflow: hidden;
+			outline: none;
+		}
+
+		.nav a::after {
+			content: '';
+			position: absolute;
+			left: -100%;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(63, 167, 255, 0.15);
+			transition: left 0.4s cubic-bezier(.77, 0, .18, 1.01);
+			z-index: 1;
+		}
+
+		.nav a:hover::after {
+			left: 0;
+		}
+
+		.nav a:hover,
+		.nav a:focus {
+			background: linear-gradient(90deg, #1e3c72 0%, #3fa7ff 100%);
+			color: #e0e6ed;
+			transform: scale(1.08) rotate(-2deg);
+			box-shadow: 0 4px 20px #3fa7ff55;
+		}
+
+		.nav a:focus {
+			outline: none;
+			box-shadow: 0 0 0 3px #3fa7ff77;
+		}
+
+		.footer-watermark {
+			position: fixed;
+			bottom: 15px;
+			width: 100%;
+			text-align: center;
+			font-size: 0.95em;
+			color: #5c7fa3;
+			letter-spacing: 1px;
+			z-index: 2;
+			animation: fadeInUp 1.2s 1.2s both;
+		}
+
+		.footer-watermark a {
+			color: #3fa7ff;
+			text-decoration: underline;
+			transition: color 0.2s;
+		}
+
+		.footer-watermark a:hover {
+			color: #fff;
+		}
+
+		#bg-canvas {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			z-index: 0;
+			pointer-events: none;
+		}
+
+		.deskripsi {
+		text-align: justify;
+		}
+	</style>
+</head>
+
+<body>
+	<canvas id="bg-canvas"></canvas>
+	<div class="container">
+		<h1>Tenesys Playground</h1>
+		<p>
+		<div style="text-align: justify;">
+			Tenesys Playground adalah platform latihan keamanan siber berbasis Jeopardy-style
+			yang dibuat khusus untuk para member komunitas Tenesys. Platform ini dirancang
+			untuk melatih keterampilan dalam bidang seperti Web Exploitation, Reverse Engineering,
+			Forensic, Cryptography, dan kategori lainnya melalui pendekatan praktis yang seru dan menantang.<br><br>
+		
+		    Setiap tantangan punya tingkatan kesulitan sebagai berikut:
+			<ul style="margin-top: 5px; margin-bottom: 15px;">
+				<li><span class="difficulty-label easy">Easy</span> (50 poin)</li>
+				<li><span class="difficulty-label medium">Medium</span> (100 poin)</li>
+				<li><span class="difficulty-label hard">Hard</span> (150 poin)</li>
+			</ul>
+		
+			<b>Setiap flag yang ditemukan akan berbentuk format : Tenesys{...} — jadi pastikan kamu menemukannya dengan tepat!</b>
+		</div>
+		</p>
+
+		<div class="nav">
+			<a href="dashboard.php?p=challenges">Home</a>
+		</div>
+	</div>
+
+	<div class="footer-watermark">
+		Hosted by Rommel &nbsp; | &nbsp;
+		<a href="https://github.com/Romm31" target="_blank">github.com/Romm31</a>
+	</div>
+
+	<!-- ANIMASI BACKGROUND -->
+	<script>
+		const canvas = document.getElementById('bg-canvas');
+		const ctx = canvas.getContext('2d');
+		let w, h;
+		let stars = [];
+
+		function resize() {
+			w = canvas.width = window.innerWidth;
+			h = canvas.height = window.innerHeight;
+		}
+		window.addEventListener('resize', resize);
+		resize();
+
+		function randomStar() {
+			return {
+				x: Math.random() * w,
+				y: Math.random() * h,
+				radius: Math.random() * 1.2 + 0.5,
+				speed: Math.random() * 0.6 + 0.2,
+				alpha: Math.random() * 0.5 + 0.5
+			};
+		}
+
+		function createStars(n) {
+			stars = [];
+			for (let i = 0; i < n; i++) {
+				stars.push(randomStar());
+			}
+		}
+		createStars(500);
+
+		function animateStars() {
+			ctx.clearRect(0, 0, w, h);
+			for (let star of stars) {
+				ctx.save();
+				ctx.globalAlpha = star.alpha;
+				ctx.beginPath();
+				ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+				ctx.fillStyle = '#3fa7ff';
+				ctx.shadowColor = '#3fa7ff';
+				ctx.shadowBlur = 12;
+				ctx.fill();
+				ctx.restore();
+
+				star.x += star.speed;
+				if (star.x > w + 10) {
+					star.x = -10;
+					star.y = Math.random() * h;
+					star.radius = Math.random() * 1.2 + 0.5;
+					star.speed = Math.random() * 0.6 + 0.2;
+					star.alpha = Math.random() * 0.5 + 0.5;
+				}
+			}
+			requestAnimationFrame(animateStars);
+		}
+		animateStars();
+
+		canvas.addEventListener('click', function (e) {
+			let mx = e.clientX, my = e.clientY;
+			for (let i = 0; i < 18; i++) {
+				stars.push({
+					x: mx,
+					y: my,
+					radius: Math.random() * 2 + 1,
+					speed: Math.random() * 2 + 1,
+					alpha: 1,
+					vx: Math.cos(i * 20 * Math.PI / 180) * (Math.random() * 2 + 1),
+					vy: Math.sin(i * 20 * Math.PI / 180) * (Math.random() * 2 + 1),
+					explode: true,
+					life: 0
+				});
+			}
+		});
+
+		function updateExplosions() {
+			for (let i = stars.length - 1; i >= 0; i--) {
+				let s = stars[i];
+				if (s.explode) {
+					s.x += s.vx;
+					s.y += s.vy;
+					s.alpha -= 0.02;
+					s.life++;
+					if (s.alpha <= 0 || s.life > 40) {
+						stars.splice(i, 1);
+					}
+				}
+			}
+			requestAnimationFrame(updateExplosions);
+		}
+		updateExplosions();
+	</script>
+</body>
+
+</html>
