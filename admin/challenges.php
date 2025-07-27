@@ -4,10 +4,7 @@
             <h3>Challenges</h3>
             <button id="btn-add-challenge">ADD</button>
         </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
         <table>
             <tr class="head">
                 <th>Sl.no</th>
@@ -15,7 +12,6 @@
                 <th>Category</th>
                 <th>Score</th>
                 <th>Solved</th>
-<<<<<<< HEAD
                 <th>Actions</th>
             </tr>
 
@@ -55,51 +51,18 @@
                                 >Edit</a>
                                 <a href='/admin/controllers/delete_challenge.php?id=$challenge_id' class='btn-delete' onclick=\"return confirm('Are you sure you want to delete this challenge?');\">Delete</a>
                               </td>";
-=======
-            </tr>
-
-            <?php 
-                // --- QUERY SQL DIPERBAIKI ---
-                $sql = "SELECT ch.id, ch.title, ch.score, cat.name FROM challenges ch JOIN category cat ON ch.cat_id = cat.cat_id ORDER BY ch.id";
-                $result = mysqli_query($conn, $sql);
-                
-                if ($result && mysqli_num_rows($result) > 0) {
-                    $sl_no = 1; // Nomor urut dibuat dengan PHP
-                    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                        
-                        // Menghitung berapa kali soal ini diselesaikan
-                        $challenge_id = $row['id'];
-                        $sql_solved = "SELECT COUNT(s_id) as solved_count FROM scoreboard WHERE c_id = $challenge_id";
-                        $result_solved = mysqli_query($conn, $sql_solved);
-                        $row_solved = mysqli_fetch_array($result_solved, MYSQLI_ASSOC);
-                        $solved_count = $row_solved['solved_count'];
-
-                        echo "<tr class='content'>";
-                        echo "<td>".$sl_no."</td>";
-                        echo "<td>".htmlspecialchars($row["title"])."</td>";
-                        echo "<td>".htmlspecialchars($row["name"])."</td>";
-                        echo "<td>".$row["score"]."</td>";
-                        echo "<td>".$solved_count."</td>";
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                         echo "</tr>";
                         $sl_no++;
                     }
                 } else {
-<<<<<<< HEAD
                     echo "<tr><td colspan='6'>No challenges found.</td></tr>";
-=======
-                    echo "<tr><td colspan='5'>No challenges found.</td></tr>";
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                 }
             ?>
         </table>
     </div>
 </div>
 
-<<<<<<< HEAD
 <!-- MODAL: Add Challenge -->
-=======
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 <div id="modal-add-challenge" class="modal">
     <div class="modal-card">
         <h2>New Challenge</h2>
@@ -124,7 +87,6 @@
             </div>
             <input type="submit" name="add_challenge" value="CREATE">
         </form>
-<<<<<<< HEAD
         <button id="btn-modal-close" class="btn-close"><img src="/images/close.svg"/></button>
     </div>
 </div>
@@ -248,13 +210,3 @@
     to { opacity: 1; transform: scale(1); }
 }
 </style>
-=======
-        <button id="btn-modal-close"class="btn-close"><img src="/images/close.svg"/></button>
-    </div>
-</div>
-
-<script src="/js/modal.js"></script>
-<script>
-    Modal.init("modal-add-challenge", "btn-add-challenge", "btn-modal-close");
-</script>
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c

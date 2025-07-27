@@ -18,11 +18,7 @@
         if(mysqli_stmt_execute($stmt)) {
             // Beri pesan sukses jika berhasil dan segarkan halaman
             echo "<script>
-<<<<<<< HEAD
                     alert('Message sent! Thank you for contacting us.');
-=======
-                    alert('Pesan Anda telah terkirim. Terima kasih!');
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                     window.location.href='contact-us.php';
                   </script>";
             exit();
@@ -44,12 +40,6 @@
     <div class="foreground"></div>
     <nav>
         <div class="nav-container">
-<<<<<<< HEAD
-=======
-            <h1>
-                TenesysCTF
-            </h1>
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
         </div>
     </nav>
     <div class="main-container">

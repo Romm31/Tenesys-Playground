@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 // Notifikasi jika password gagal, sukses, atau kosong
 if (isset($_GET['pass_update'])) {
@@ -24,8 +23,6 @@ if (isset($_GET['pass_update'])) {
 }
 ?>
 
-=======
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
 <div class="settings">
     
     <h3>Settings</h3>
@@ -45,7 +42,6 @@ if (isset($_GET['pass_update'])) {
     <script>
         let form = document.getElementById('form-password');
         form.addEventListener('submit', function(e) {
-<<<<<<< HEAD
             let pswd1 = document.getElementById('pswd1').value.trim();
             let pswd2 = document.getElementById('pswd2').value.trim();
             
@@ -58,21 +54,3 @@ if (isset($_GET['pass_update'])) {
         });
     </script>
 </div>
-=======
-
-            let pswd1 = document.getElementById('pswd1').value.trim();
-            let pswd2 = document.getElementById('pswd2').value.trim();
-            
-            // Hanya jalankan pengecekan jika new-password diisi
-            if (pswd1 !== "" || pswd2 !== "") {
-                if (pswd1 !== pswd2) {
-                    // Jika password tidak cocok, hentikan pengiriman form dan tampilkan error
-                    e.preventDefault(); 
-                    myToast.showError("Passwords doesn't match", null);
-                }
-                // Jika password cocok, biarkan form terkirim secara normal
-            }
-        });
-    </script>
-</div>
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c

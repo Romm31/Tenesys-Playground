@@ -27,7 +27,6 @@
       font-size: 2em;
     }
 
-<<<<<<< HEAD
     .media-container {
       display: flex;
       justify-content: center;
@@ -45,16 +44,6 @@
       max-width: 320px; /* ukuran disamakan */
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-=======
-    video {
-      margin-top: 30px;
-      width: 80%;
-      max-width: 600px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-      position: relative;
-      z-index: 1;
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
     }
 
     .emoji-fall {
@@ -78,7 +67,6 @@
   <h1>Ngapain kamu bang</h1>
   <p>Apakah kamu hengker? <span class="emoji">😲📸</span></p>
 
-<<<<<<< HEAD
   <div class="media-container">
     <video autoplay loop muted playsinline controls>
       <source src="/images/yahaha.mp4" type="video/mp4">
@@ -89,15 +77,6 @@
 
   <script>
     const emojiList = ["😂", "🤣", "😹", "😂", "🤣", "😹", "😂", "🤣", "😹", "😂", "🤣", "😹", "😂", "🤣", "😹", "😂", "🤣", "😹"];
-=======
-  <video autoplay loop muted playsinline controls>
-    <source src="/images/yahaha.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <script>
-    const emojiList = ["😂", "🤣", "😹", "😂", "🤣", "😹", "😂", "🤣", "😹"];
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
     const maxEmojis = 1000;
     let currentEmojis = 0;
 
@@ -114,23 +93,12 @@
       document.body.appendChild(emoji);
       currentEmojis++;
 
-<<<<<<< HEAD
       setTimeout(() => {
         emoji.remove();
         currentEmojis--;
       }, 7000);
     }
 
-=======
-      // Kurangi jumlah saat emoji dihapus
-      setTimeout(() => {
-        emoji.remove();
-        currentEmojis--;
-      }, 7000); // harus lebih panjang dari durasi animasi
-    }
-
-    // Loop setiap 100ms tambahkan beberapa emoji jika belum mencapai batas
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
     setInterval(() => {
       if (currentEmojis < maxEmojis) {
         for (let i = 0; i < 10; i++) {

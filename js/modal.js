@@ -1,18 +1,10 @@
-<<<<<<< HEAD
 var Modal = {
     init: function (modal_id, trigger_id, close_id) {
-=======
-
-var Modal = {
-
-    init: function(modal_id, trigger_id, close_id) {
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
         let trigger = document.getElementById(trigger_id);
         let modal = document.getElementById(modal_id);
         let btnClose = document.getElementById(close_id);
 
         if (typeof trigger === undefined || typeof modal === undefined) {
-<<<<<<< HEAD
             console.error("Unable to link the elements");
             return;
         }
@@ -23,17 +15,6 @@ var Modal = {
         }
 
         btnClose.onclick = function () {
-=======
-            console.error("Unable link the elements");
-            return;
-        }
-        //Set click listener for trigger
-        trigger.onclick = function() {
-            modal.style.display = "flex";
-        }
-
-        btnClose.onclick = function() {
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
             modal.style.display = "none";
         }
     }
@@ -42,10 +23,6 @@ var Modal = {
 class ChallengeModal {
 
     constructor(modal_id, card_class, close_id, solve_id) {
-<<<<<<< HEAD
-=======
-
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
         this.triggers = document.getElementsByClassName(card_class);
         this.modal = document.getElementById(modal_id);
         this.btnClose = document.getElementById(close_id);
@@ -57,18 +34,13 @@ class ChallengeModal {
             this.triggers[i].onclick = () => {
                 this.modal.style.display = "flex";
                 this.solveForm.setAttribute("data-cid", this.triggers[i].getAttribute("data-id"));
-<<<<<<< HEAD
                 console.log("Challenge Id: " + this.solveForm.dataset.cid);
-=======
-                console.log("Challenge Id: "+this.solveForm.dataset.cid);
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                 let challenge_id = this.triggers[i].dataset.id;
                 loadData(modal_id, challenge_id, this.userid);
             }
         }
     }
 
-<<<<<<< HEAD
     init(userid) {
         this.userid = userid;
         console.log("UserID : " + userid);
@@ -76,22 +48,12 @@ class ChallengeModal {
         this.solveForm.addEventListener("submit", (e) => {
             if (e.preventDefault) e.preventDefault();
 
-=======
-    init(userid){
-        this.userid = userid;
-        console.log("UserID : "+userid);
-
-        this.solveForm.addEventListener("submit", (e) => {
-            if (e.preventDefault) e.preventDefault();
-            
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
             let flag = this.textFlag.value;
             let params = {
                 flag: flag,
                 cid: this.solveForm.dataset.cid,
                 userid: this.userid
             };
-<<<<<<< HEAD
             console.log("Params: " + JSON.stringify(params));
 
             axios.post('solve_challenge.php', params).then((response) => {
@@ -101,28 +63,12 @@ class ChallengeModal {
                     myToast.showSuccess(response.message, function () {
                         location.reload();
                     });
-=======
-            console.log("Params: "+JSON.stringify(params));
-
-            axios.post('solve_challenge.php', params).then((response) => {
-                //code here 
-                console.log(JSON.stringify(response));
-                if (response.status === 200) {
-                    this.textFlag.style.color = "green";
-                    myToast.showSuccess(response.message, function() { location.reload(); });
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
                 } else {
                     this.textFlag.style.color = "red";
                     myToast.showError(response.message, null);
                 }
-<<<<<<< HEAD
             });
 
-=======
-                
-            });
-            // You must return false to prevent the default form behavior
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
             return false;
         });
 
@@ -130,23 +76,11 @@ class ChallengeModal {
             console.log("Closing Modal");
             this.modal.style.display = "none";
         }
-<<<<<<< HEAD
     }
 }
 
 function loadData(modal_id, challenge_id, user_id) {
     console.log("Opening " + modal_id + " for #" + challenge_id);
-=======
-
-    }
-
-}
-
-
-function loadData (modal_id, challenge_id, user_id) {
-    //TODO Create network request to fetch challenge details
-    console.log("Opening "+modal_id+" for #"+challenge_id);
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
     let challenge_title = document.getElementById("challenge-id");
     challenge_title.innerHTML = "Challenge";
 
@@ -159,15 +93,10 @@ function loadData (modal_id, challenge_id, user_id) {
     challenge_desc.innerHTML = "";
     challenge_flag.value = "";
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c
     let params = {
         cid: challenge_id,
         userid: user_id
     };
-<<<<<<< HEAD
 
     axios.post("get_challenge.php", params)
         .then(function (response) {
@@ -195,23 +124,3 @@ function loadData (modal_id, challenge_id, user_id) {
             }
         });
 }
-=======
-    axios.post("get_challenge.php", params)
-    .then(function(response) {
-        console.log(JSON.stringify(response));
-
-        challenge_name.innerHTML = response.title;
-        challenge_desc.innerHTML = response.description;
-
-        if (response.isSolved.toString() === "true") {
-            btnSolve.style.display = "none";
-            challenge_flag.style.display = "none";
-        } else {
-            btnSolve.style.display = "block";
-            challenge_flag.style.display = "block";
-        }
-    });
-    //fetch("get_challenge.php?cid="+challenge_id)
-    
-}
->>>>>>> 219c0d84be18af48f1d4c831999d5e6e4aa0e12c

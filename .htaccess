@@ -1,5 +1,10 @@
 # ==========================
-# Aktifkan Rewrite Engine
+# PRIORITAS FILE INDEX
+# ==========================
+DirectoryIndex index.html index.php
+
+# ==========================
+# AKTIFKAN REWRITE ENGINE
 # ==========================
 RewriteEngine On
 RewriteBase /
@@ -18,24 +23,22 @@ RewriteRule ^dashboard/?$ dashboard.php [L,QSA]
 RewriteRule ^(bugbounty|admin|logs|private|backup|secret|config|core)/?$ /error.php [L,R=403]
 
 # ==========================
-# BLOKIR FILE SENSITIF LANGSUNG (backup, db, config)
+# BLOKIR FILE SENSITIF
 # ==========================
 <FilesMatch "\.(env|git|htaccess|htpasswd|ini|phps|fla|psd|log|sh|bak|sql|yml|yaml|pem|key)$">
     Require all denied
 </FilesMatch>
 
-# ==========================
-# BLOKIR .htaccess
-# ==========================
 <Files .htaccess>
     Require all denied
 </Files>
 
 # ==========================
-# PENANGANAN SEMUA URL YANG TIDAK DITEMUKAN
+# CATCH-ALL UNTUK FILE TIDAK ADA (DIBUAT KHUSUS AGAR INDEX MASIH JALAN)
 # ==========================
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/$
 RewriteRule ^.*$ /error.php [L]
 
 # ==========================
@@ -67,26 +70,9 @@ php_value post_max_size 12M
 # ==========================
 # SECURITY HEADERS
 # ==========================
-# Cegah klikjacking
-Header always set X-Frame-Options "SAMEORIGIN"
-
-# MIME sniffing protection
+Header set Content-Security-Policy "default-src 'self'; frame-src 'self' https://www.google.com https://www.openstreetmap.org; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
 Header set X-Content-Type-Options "nosniff"
-
-# XSS proteksi dasar
 Header set X-XSS-Protection "1; mode=block"
-
-# Content Security Policy dasar
-Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
-
-# Strict Transport Security (aktifkan jika HTTPS sudah berjalan)
-# Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-
-# Referrer Policy (minimalkan kebocoran info dari referer)
 Header set Referrer-Policy "strict-origin-when-cross-origin"
-
-# Permissions Policy (batasi fitur browser)
 Header set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
-
-# Remove Server Signature
 ServerSignature Off
